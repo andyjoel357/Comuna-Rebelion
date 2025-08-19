@@ -1,11 +1,12 @@
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ImagenesService } from '../../service/imagenes.service';
 import { GalleryService } from '../../service/gallery.service';
 @Component({
   selector: 'app-nosotros',
-  imports: [NgFor],
+  imports: [NgFor, CommonModule],
+  standalone: true,
   templateUrl: './nosotros.component.html',
   styleUrl: './nosotros.component.css',
 })
