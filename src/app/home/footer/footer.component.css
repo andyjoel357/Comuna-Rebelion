@@ -1,0 +1,66 @@
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px; /* Reducido de 20px a 10px */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px; /* Tamaño de fuente reducido */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reducido de 20px a 10px */
+  margin-bottom: 10px; /* Reducido de 20px a 10px */
+}
+
+.social-item {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Reducido de 10px a 5px */
+  font-size: 12px; /* Tamaño de fuente reducido */
+}
+
+.social-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px; /* Tamaño de fuente reducido */
+}
+
+.social-item a:hover {
+  color: #0077b5;
+}
+
+.social-item input {
+  padding: 3px; /* Reducido de 5px a 3px */
+  border: none;
+  border-radius: 4px;
+  font-size: 12px; /* Tamaño de fuente reducido */
+}
+
+.social-image {
+  width: 20px; /* Reducido de 30px a 20px */
+  height: 20px; /* Reducido de 30px a 20px */
+  border-radius: 50%;
+}
+
+.additional-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reducido de 20px a 10px */
+  margin-bottom: 10px; /* Reducido de 20px a 10px */
+}
+
+.footer-image {
+  width: 30px; /* Reducido de 50px a 30px */
+  height: 30px; /* Reducido de 50px a 30px */
+  border-radius: 8px;
+}
+
+/* Estilo para el texto del footer */
+.footer p {
+  margin: 0; /* Elimina el margen predeterminado */
+  font-size: 12px; /* Tamaño de fuente reducido */
+}

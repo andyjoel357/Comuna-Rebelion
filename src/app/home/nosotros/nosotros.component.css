@@ -1,0 +1,57 @@
+.custom-carousel {
+  width: 100vw; /* Ocupa el ancho completo de la ventana */
+  height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  position: relative; /* Para posicionar elementos internos si es necesario */
+  overflow: hidden; /* Evita que las imágenes se desborden */
+  display: flex;
+  align-items: center; /* Centra la imagen verticalmente */
+  justify-content: center; /* Centra la imagen horizontalmente */
+}
+
+
+.carousel-inner img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Ajusta la imagen sin recortarla */
+}
+
+/* Ocultar el pie de foto (alt, descripción, etc.) */
+.carousel-caption {
+  display: none !important; /* Oculta el pie de foto */
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  background-color: #fffdfd; /* Fondo para la galería */
+}
+
+.gallery-image {
+  width: calc(20% - 10px); /* 5 columnas: 100% / 5 = 20%, menos el margen */
+  height: 100px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  object-fit: cover; /* Asegura que las miniaturas cubran el espacio asignado */
+}
+
+.gallery-image:hover {
+  transform: scale(3.1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .gallery-image {
+    width: calc(33.33% - 10px); /* 3 columnas en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-image {
+    width: calc(50% - 10px); /* 2 columnas en pantallas muy pequeñas */
+  }
+}

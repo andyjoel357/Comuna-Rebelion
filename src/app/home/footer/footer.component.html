@@ -1,0 +1,31 @@
+<footer class="footer">
+  <!-- Enlaces a redes sociales -->
+  <div class="social-links">
+    <!-- Facebook -->
+    <div class="social-item">
+      <a *ngIf="facebookUrl; else noFacebook" [href]="facebookUrl" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-facebook"></i>
+      </a>
+      <ng-template #noFacebook>
+        <input [(ngModel)]="facebookUrl" placeholder="Ingresa URL de Facebook" />
+        <img *ngIf="facebookUrl" [src]="facebookUrl" alt="Facebook" class="social-image" />
+      </ng-template>
+    </div>
+
+    <!-- GitHub -->
+    <div class="social-item">
+      <a *ngIf="githubUrl; else noGithub" [href]="githubUrl" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-github"></i> <!-- Icono de GitHub de Bootstrap Icons -->
+      </a>
+      <ng-template #noGithub>
+        <input [(ngModel)]="githubUrl" placeholder="Ingresa URL de GitHub" />
+        <img *ngIf="githubUrl" [src]="githubUrl" alt="GitHub" class="social-image" />
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- Espacio para tres imágenes adicionales -->
+
+  <!-- Texto del footer -->
+  <p>&copy; 2023 TuNombre. Todos los derechos reservados.</p>
+</footer>

@@ -1,0 +1,84 @@
+<!-- Carrusel -->
+<div id="demo" class="carousel slide custom-carousel" data-bs-ride="carousel">
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button
+      *ngFor="let image of carouselImages; let i = index"
+      type="button"
+      data-bs-target="#demo"
+      [attr.data-bs-slide-to]="i"
+      [class.active]="i === 0"
+    ></button>
+  </div>
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+    <div
+      *ngFor="let image of carouselImages; let i = index"
+      class="carousel-item"
+      [class.active]="i === 0"
+    >
+      <img [src]="image.url" [alt]="image.alt" class="d-block" />
+      <div class="carousel-caption">
+        <h3>{{ image.title }}</h3>
+        <p>{{ image.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controles -->
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#demo"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#demo"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- Galería de fotos -->
+<div class="gallery text-center">
+  <img
+    *ngFor="let image of galleryImages"
+    [src]="image.url"
+    [alt]="image.alt"
+    class="gallery-image"
+    (click)="openModal(image.url)"
+  />
+</div>
+
+<!-- Modal para mostrar la imagen ampliada -->
+<div
+  class="modal fade"
+  id="imageModal"
+  tabindex="-1"
+  aria-labelledby="imageModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Imagen Ampliada</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-center">
+        <img [src]="selectedImage" alt="Imagen ampliada" class="img-fluid" />
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>

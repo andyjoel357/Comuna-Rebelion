@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Usamos min-height para asegurar que cubra toda la pantalla */
+  background-image: url('https://imgs.search.brave.com/CWbAvw-EgomyEUC_c5bYlqW3CR-wohd4rGFdjfm0Rys/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzExLzExLzQ4Lzgz/LzM2MF9GXzExMTE0/ODgzMzJfcmFtbGFC/ZjFYRXFlbzB0d2d1/bU4yNzdpS01pOGJC/YnIuanBn');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Fondo fijo para que sea responsive */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
