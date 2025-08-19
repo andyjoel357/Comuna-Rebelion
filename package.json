@@ -21,7 +21,7 @@
     "@angular/platform-browser": "19.2.1",
     "@angular/platform-browser-dynamic": "19.2.1",
     "@angular/router": "19.2.1",
-    "@ng-bootstrap/ng-bootstrap": "^16.0.0", 
+    "@ng-bootstrap/ng-bootstrap": "^17.0.0", 
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "emailjs-com": "^3.2.0",
