@@ -1,4 +1,11 @@
 {
+  "version": 2,
   "buildCommand": "npm install --legacy-peer-deps && ng build --configuration=production --base-href=\"/comuna-rebelion/\"",
-  "outputDirectory": "dist/comuna-rebelion/browser"
+  "outputDirectory": "dist/comuna-rebelion",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
