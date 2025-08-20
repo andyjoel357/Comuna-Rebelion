@@ -1,17 +1,16 @@
 {
   "version": 2,
-  "buildCommand": "npm install --legacy-peer-deps && ng build --configuration=production --base-href=\"/comuna-rebelion/\"",
-  "outputDirectory": "dist/comuna-rebelion",
-  "routes": [
+  "builds": [
     {
-      "src": "/comuna-rebelion/(.*)",
-      "dest": "/comuna-rebelion/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/comuna-rebelion/index.html"
+      "src": "dist/comuna-rebelion/**/*",
+      "use": "@vercel/static"
     }
   ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/comuna-rebelion/index.html",
+      "methods": ["GET"]
+    }
+  ]
 }

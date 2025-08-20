@@ -6,10 +6,10 @@ import { Error404Component } from './home/error404/error404.component';
 
 
 export const routes: Routes = [
-  {path:'Inicio', component:InicioComponent },
-  {path:'Nosotros', component:NosotrosComponent},
-  {path:'Unete', component:UneteComponent},
+  {path:'inicio', component:InicioComponent },
+  {path:'nosotros', component:NosotrosComponent},
+  {path:'unete', component:UneteComponent},
 
-  {path:'', redirectTo:'Inicio', pathMatch:'full'},
+  {path:'', redirectTo:'inicio', pathMatch:'full'},
   {path:'**', component:Error404Component}
 ];
