@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "baseHref": "/comuna-rebelion/",
+            "baseHref": "/",
             "outputPath": "dist/comuna-rebelion",
             "index": "src/index.html",
             "browser": "src/main.ts",
