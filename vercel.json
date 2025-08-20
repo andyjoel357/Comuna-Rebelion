@@ -2,11 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "dist/comuna-rebelion/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/dist/comuna-rebelion/assets/$1"
+    },
+    {
+      "src": "/(.*\\.(ico|css|js|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot))",
+      "dest": "/dist/comuna-rebelion/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/dist/comuna-rebelion/index.html"
