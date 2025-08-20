@@ -4,8 +4,14 @@
   "outputDirectory": "dist/comuna-rebelion",
   "routes": [
     {
+      "src": "/comuna-rebelion/(.*)",
+      "dest": "/comuna-rebelion/index.html"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/comuna-rebelion/index.html"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
