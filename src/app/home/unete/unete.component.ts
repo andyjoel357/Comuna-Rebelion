@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, NgForm, Validators } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import emailjs from 'emailjs-com'; // Importa EmailJS
+import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-unete',
@@ -10,14 +10,33 @@ import emailjs from 'emailjs-com'; // Importa EmailJS
   styleUrl: './unete.component.css',
 })
 export class UneteComponent {
+  alertMessage: string = '';
+  alertType: 'success' | 'error' | 'warning' | '' = '';
+  showAlert: boolean = false;
+
   constructor() {}
+
+  showAlertMessage(message: string, type: 'success' | 'error' | 'warning') {
+    this.alertMessage = message;
+    this.alertType = type;
+    this.showAlert = true;
+
+    // Ocultar la alerta después de 5 segundos
+    setTimeout(() => {
+      this.hideAlert();
+    }, 5000);
+  }
+
+  hideAlert() {
+    this.showAlert = false;
+  }
 
   onSubmit(form: NgForm) {
     if (form.valid) {
       const formData = form.value;
 
       // Configura EmailJS con tu User ID
-      emailjs.init('0zcL1VABbbl2CAIpm'); // Reemplaza con tu User ID de EmailJS
+      emailjs.init('0zcL1VABbbl2CAIpm');
 
       // Envía el correo electrónico
       emailjs
@@ -29,16 +48,16 @@ export class UneteComponent {
         })
         .then(
           (response) => {
-            alert('Formulario enviado con éxito');
+            this.showAlertMessage('Formulario enviado con éxito', 'success');
             form.resetForm();
           },
           (error) => {
-            alert('Error al enviar el formulario');
+            this.showAlertMessage('Error al enviar el formulario', 'error');
             console.error('Error:', error);
           }
         );
     } else {
-      alert('Por favor, completa el formulario correctamente');
+      this.showAlertMessage('Por favor, completa el formulario correctamente', 'warning');
     }
   }
 }

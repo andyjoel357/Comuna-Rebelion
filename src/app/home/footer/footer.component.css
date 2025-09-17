@@ -2,11 +2,12 @@
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 10px; /* Reducido de 20px a 10px */
+  padding: 5px; /* Reducido de 20px a 10px */
   position: fixed;
   bottom: 0;
   width: 100%;
-  font-size: 12px; /* Tamaño de fuente reducido */
+  font-size: 10px; /* Tamaño de fuente reducido */
+
 }
 
 .social-links {

@@ -1,5 +1,5 @@
 <footer class="footer">
-  <!-- Enlaces a redes sociales -->
+
   <div class="social-links">
     <!-- Facebook -->
     <div class="social-item">
@@ -18,14 +18,12 @@
         <i class="bi bi-github"></i> <!-- Icono de GitHub de Bootstrap Icons -->
       </a>
       <ng-template #noGithub>
-        <input [(ngModel)]="githubUrl" placeholder="Ingresa URL de GitHub" />
+        <input [(ngModel)]="githubUrl" placeholder="https://github.com/andyjoel357" />
         <img *ngIf="githubUrl" [src]="githubUrl" alt="GitHub" class="social-image" />
       </ng-template>
     </div>
   </div>
 
-  <!-- Espacio para tres imágenes adicionales -->
-
-  <!-- Texto del footer -->
   <p>&copy; 2023 TuNombre. Todos los derechos reservados.</p>
 </footer>
+
