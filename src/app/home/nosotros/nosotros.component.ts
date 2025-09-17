@@ -25,10 +25,7 @@ export class NosotrosComponent implements OnInit {
   error: string | null = null;
 
   ngOnInit(): void {
-    // Obtener imágenes del carrusel desde Firebase Realtime Database
     this.loadCarouselImages();
-
-    // Mantener la galería local si es necesario, o también migrar a Firebase
     this.loadGalleryImages();
   }
 
@@ -51,8 +48,6 @@ export class NosotrosComponent implements OnInit {
     });
   }
 
-  // Mantener este método si la galería sigue siendo local
-  // o modificarlo para usar Firebase también
   loadGalleryImages(): void {
  this.isLoading = true;
     this.error = null;
@@ -69,9 +64,6 @@ export class NosotrosComponent implements OnInit {
         console.error('❌ Error cargando galeria:', err);
       }
     });
-    // this.galleryImages = [
-    //   // ... tus imágenes locales de galería
-    // ];
   }
 
   // Función para abrir el modal
@@ -81,8 +73,6 @@ export class NosotrosComponent implements OnInit {
       size: 'lg',
     });
   }
-
-  // Método para recargar en caso de error
   reload(): void {
     this.loadCarouselImages();
   }
