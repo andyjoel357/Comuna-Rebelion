@@ -5,9 +5,9 @@ import { UneteComponent } from './home/unete/unete.component';
 import { Error404Component } from './home/error404/error404.component';
 
 export const routes: Routes = [
-  { path: 'inicio', component: InicioComponent },  
-  { path: 'nosotros', component: NosotrosComponent },
-  { path: 'unete', component: UneteComponent },
-  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
+  { path: 'Inicio', component: InicioComponent },  
+  { path: 'Nosotros', component: NosotrosComponent },
+  { path: 'Unete', component: UneteComponent },
+  { path: '', redirectTo: 'Inicio', pathMatch: 'full' },
   { path: '**', component: Error404Component }
 ];

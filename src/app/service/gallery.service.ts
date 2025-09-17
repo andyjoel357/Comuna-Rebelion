@@ -8,8 +8,11 @@ import { Observable } from 'rxjs';
 export class GalleryService {
 
   constructor(private http:HttpClient) { }
-  private API_GALLERY='http://localhost:3000/gallery'
+  private API_GALLERY='http://localhost:3000/images';
    getGallery():Observable <any>{
       return this.http.get(this.API_GALLERY)
     }
+      getProductosID(id:any):Observable <any>{
+    return this.http.get(`${this.API_GALLERY}/${id}`)
+  }
 }
