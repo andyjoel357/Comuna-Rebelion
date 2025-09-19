@@ -11,8 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class FooterComponent {
   facebookUrl: string = 'https://www.facebook.com/comunarebelion'; // URL de Facebook
-  githubUrl: string = 'https://github.com/andyjoel357?tab=repositories';   // URL de GitHub
+  instagramUrl: string = 'https://github.com/andyjoel357?tab=repositories';   // URL de GitHub
 
   // Imágenes adicionales
-  
+
 }

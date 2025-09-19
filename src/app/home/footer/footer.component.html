@@ -1,55 +1,30 @@
 <footer class="footer">
+
   <div class="social-links">
     <!-- Facebook -->
     <div class="social-item">
-      <a
-        *ngIf="facebookUrl; else noFacebook"
-        [href]="facebookUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a *ngIf="facebookUrl; else noFacebook" [href]="facebookUrl" target="_blank" rel="noopener noreferrer">
         <i class="bi bi-facebook"></i>
       </a>
       <ng-template #noFacebook>
-        <input
-          [(ngModel)]="facebookUrl"
-          placeholder="https://www.facebook.com/comunarebelion/photos"
-        />
-        <img
-          *ngIf="facebookUrl"
-          [src]="facebookUrl"
-          alt="Facebook"
-          class="social-image"
-        />
+        <input [(ngModel)]="facebookUrl" placeholder="https://www.facebook.com/comunarebelion/photos" />
+        <img *ngIf="facebookUrl" [src]="facebookUrl" alt="Facebook" class="social-image" />
       </ng-template>
     </div>
 
-    <div class="social-links">
-      <!-- Facebook -->
-      <div class="social-item">
-        <a
-          *ngIf="facebookUrl; else noFacebook"
-          [href]="facebookUrl"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="bi bi-facebook"></i>
-        </a>
-        <ng-template #noFacebook>
-          <input
-            [(ngModel)]="facebookUrl"
-            placeholder="https://www.facebook.com/profile.php?id=100083734772664"
-          />
-          <img
-            *ngIf="facebookUrl"
-            [src]="facebookUrl"
-            alt="Facebook"
-            class="social-image"
-          />
-        </ng-template>
-      </div>
-    </div>
+    <!-- Instagram -->
+    <div class="social-item">
+      <a *ngIf="instagramUrl; else noInstagram" [href]="instagramUrl" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-instagram"></i>
+      </a>
+      <ng-template #noInstagram>
+        <input [(ngModel)]="instagramUrl" placeholder="https://www.instagram.com/comunarebelion/" />
+        <img *ngIf="instagramUrl" [src]="instagramUrl" alt="Instagram" class="social-image" />
+      </ng-template>
+
   </div>
+  </div>  
 
   <p>&copy; 2023 TuNombre. Todos los derechos reservados.</p>
 </footer>
+
