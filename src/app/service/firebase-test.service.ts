@@ -7,7 +7,6 @@ import { map } from 'rxjs/operators';
 @Injectable({ providedIn: 'root' })
 export class FirebaseTestService {
   private database = inject(Database);
-
   testFirebaseConnection(): Observable<any> {
     console.log('🔍 Probando conexión con Firebase Realtime Database...');
 
@@ -23,12 +22,23 @@ export class FirebaseTestService {
   }
 
   // Método alternativo para obtener datos específicos
+    getGalleryData(): Observable<any[]> {
+    const galleryRef = ref(this.database, 'gallery');
+
+    return objectVal(galleryRef).pipe(
+      map((data: any) => {
+        return data ? Object.keys(data).map(key => ({
+          id: key,
+          ...data[key]
+        })) : [];
+      })
+    );
+  }
   getCarouselData(): Observable<any[]> {
     const carouselRef = ref(this.database, 'carousel');
 
     return objectVal(carouselRef).pipe(
       map((data: any) => {
-        // Convertir objeto a array si es necesario
         return data ? Object.keys(data).map(key => ({
           id: key,
           ...data[key]

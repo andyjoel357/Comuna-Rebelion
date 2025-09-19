@@ -33,7 +33,6 @@ export class NosotrosComponent implements OnInit {
   loadCarouselImages(): void {
     this.isLoading = true;
     this.error = null;
-
     this.firebaseService.getCarouselData().subscribe({
       next: (images) => {
         this.carouselImages = images;
@@ -44,25 +43,24 @@ export class NosotrosComponent implements OnInit {
         this.error = 'Error al cargar el carrusel: ' + err.message;
         this.isLoading = false;
         console.error('❌ Error cargando carrusel:', err);
-      }
+      },
     });
   }
 
   loadGalleryImages(): void {
- this.isLoading = true;
+    this.isLoading = true;
     this.error = null;
-
-    this.firebaseService.getCarouselData().subscribe({
+    this.firebaseService.getGalleryData().subscribe({
       next: (images) => {
         this.galleryImages = images;
         this.isLoading = false;
-        console.log('✅ Carrusel cargado desde Firebase:', images);
+        console.log('✅ Galeria cargada desde Firebase:', images);
       },
       error: (err) => {
         this.error = 'Error al cargar la galeria: ' + err.message;
         this.isLoading = false;
         console.error('❌ Error cargando galeria:', err);
-      }
+      },
     });
   }
 
@@ -75,5 +73,6 @@ export class NosotrosComponent implements OnInit {
   }
   reload(): void {
     this.loadCarouselImages();
+    this.loadGalleryImages();
   }
 }

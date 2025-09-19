@@ -12,7 +12,4 @@ export class GalleryService {
    getGallery():Observable <any>{
       return this.http.get(this.API_GALLERY)
     }
-      getProductosID(id:any):Observable <any>{
-    return this.http.get(`${this.API_GALLERY}/${id}`)
   }
-}
